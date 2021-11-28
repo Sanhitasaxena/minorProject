@@ -21,12 +21,12 @@ const port = process.env.PORT || 6500;
 
 //cors connection
 app.use(cors({ origin: "*", methods: "GET,HEAD,PUT,PATCH,POST,DELETE" }));
-
+app.use(bodyParser.json())
 //connection of mongoDB
 mongoose
   .connect(
     "mongodb+srv://sanhita:Sanhita11@cluster0.ol2n5.mongodb.net/ExpenseDatabase?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
   )
   .then((result) => {
     console.log("database got connected Cheers :)");
