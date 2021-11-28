@@ -8,6 +8,7 @@ const Expense = require("./Expense");
 const cors = require("cors");
 require("dotenv").config();
 
+const port = process.env.PORT || 6500;
 // //enable resourse sharing (CORS)
 // app.use(function (request, response, next) {
 //   response.header("Access-Control-Allow-Origin", "http://localhost:3000"); // react loacl host domain name or *
@@ -115,7 +116,7 @@ if (process.env.NODE_ENV == "production") {
 
 //--------------------------------------------------------
 //listen on port ...
-const port = process.env.PORT || 6500;
+
 
 app.listen(port, () => {
   console.log("server is on port 6500");
